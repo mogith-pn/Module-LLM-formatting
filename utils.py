@@ -86,7 +86,8 @@ def generate_chat_response(query, contexts, model_obj, format_instructions, is_r
     try:
       response = model_obj.predict_by_bytes(bytes(prompt,"utf-8"), input_type="text", inference_params={"max_tokens":4000})
       try:
-        return json.dumps(response.outputs[0].data.text.raw, indent=4)
+        formatted_resp = json.dumps(response.outputs[0].data.text.raw, indent=4)
+        return formatted_resp
       except Exception as e:
         print(f"Response from model: {response.outputs[0].data.text.raw}")
         print(f"Error in json conversion:{e}")
