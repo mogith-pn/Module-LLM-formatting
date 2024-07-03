@@ -1,6 +1,7 @@
 [theme]
 base="light"
-primaryColor="#356dff"
+primaryColor="#787577"
+secondaryBackgroundColor="#c5d7db"  # Light purple for sidebar
 
 [ui]
 hideSidebarNav=true
